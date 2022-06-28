@@ -1,6 +1,6 @@
 # JavaScript-Interview-preparation
 
-Here I'm sharing some of the common JavaScript interview questions which could help you to crack JS interviews. This might not be completely correct, so please refer to MDN docs as well to get a clear understanding of all the concepts.
+Here I'm sharing some of the common JavaScript interview questions with basic defenitions which could help you to crack JS interviews. This might not be completely correct and some conecpts has to be explained more briefly, so please refer to MDN docs as well to get a clear understanding of all the concepts and this is just to get a simple understanding of some of the JS concepts.
 
 Javascript:
 
@@ -119,14 +119,14 @@ If a promise is resolved, .then prints the output. If a promise is not successfu
 Promises are pushed into the Micro task queue. Whereas setTime out and setInterval are pushed into the callback queue.
 
 Promise eg:
-let a = 10;
+`let a = 10;
 const isEven = new Promise((res, rej) => {
 	if(a % 2 == 0) res(“Success”);
 	else rej(“Failure”); 
 }); 
 
 isEven.then((res) => console.log(res))
-.catch((err) => console.log(err));
+.catch((err) => console.log(err));`
 
 10. What is a constructor?
 
@@ -134,13 +134,13 @@ Constructor function is a function to create or construct a pattern of an object
 Constructor function has to be in pascal notation, which is the first character should be in caps. 
 We use 2 important key words in a constructor function - this and new.
 this keywords points it to an empty object and new is like return - to return a newly created object.
-Eg for constructor function:
 
-function Circle(radius) {
+Eg for constructor function:
+`function Circle(radius) {
 	this.radius = radius,
 }
 
-const circle1 = new Circle(5);
+const circle1 = new Circle(5);`
 
 11. What is this ?
 This is a keyword which points to that object.
@@ -156,20 +156,20 @@ Also, if we have a function separately and an object, and if we want to use this
 Call:
 The syntax follows with the function name followed by the method and the object where we have to access this function is passed as an argument.
 Eg:
-name.getFullName.call(name1); //When we access a function from an object.
+`name.getFullName.call(name1);` //When we access a function from an object.
 getFullName.call(name1);  //When we access a function which is not in a function into any object. 
 If we want to pass other arguments then we can pass it from the second argument. First parameter points to the object to use this function whereas from the second parameter we can pass any arguments to be used in that function.
 
 Apply:
 Apply is similar to call but the arguments will be passed as an array.
-Eg: getFullName.call(name1, [“Hi”, “Bye”]);
+Eg: `getFullName.call(name1, [“Hi”, “Bye”]);`
 
 Bind:
 Bind is different from call and apply, whereas call and apply were making use of that pointer function but bind makes a copy of this function.
 As bind makes a copy of that function, this can be used later by invoking this function.
 Eg: 
-let later = getFullName.call(name1);
-later();
+`let later = getFullName.call(name1);
+later();`
 
 13. What is a pure function ?
 
@@ -193,14 +193,14 @@ So here we optimize our code in order to run in all browsers.
 It is a technique to transform a function with multiple arguments into different functions taking separate arguments.
 For eg. If we want to take a sum of arguments a and b, here we will be creating a function which takes an argument ‘a’ and returns a function which takes the argument ‘b’ and returns the sum of a its lexical scope and b.
 
-const addCurry =(a) => {
+`const addCurry =(a) => {
 return (b)=>{
 return (c)=>{
 return a+b+c
 }
 }
 }
-console.log(addCurry(2)(3)(5)) // 10
+console.log(addCurry(2)(3)(5)) // 10`
 
 17. What is the async and await function ?
 Async is a keyword used in a function to make it an asynchronous function.
@@ -215,7 +215,7 @@ Arrow function doesn’t have its own this keyword which will throw undefined.
 Because of this limitation, the arrow function also cannot be used to create constructor functions.
 In a regular function we can use argument objects which will return our arguments. But the same is not allowed in arrow function.
 
-function func1(a, b, c) {
+`function func1(a, b, c) {
   console.log(arguments[0]);
   // expected output: 1
 
@@ -226,7 +226,7 @@ function func1(a, b, c) {
   // expected output: 3
 }
 
-func1(1, 2, 3);
+func1(1, 2, 3);`
 
 19. Rest Operator ?
 Rest operator is an ES6 feature used to pass n number of input as a parameter in a function.
@@ -236,9 +236,9 @@ It is used as ‘…input’. So now if we pass a, b, c, d as an argument to thi
 Prototype is a blueprint of an object. In Javascript using prototype we can add methods and properties to a constructor. By creating an object we can inherit these properties and methods from a prototype. 
 An example to create our own method using prototype:
 //push function
-Array.prototype.myPush = function(val) {
+`Array.prototype.myPush = function(val) {
     this[this.length] = val;
-};
+};`
 
 21. What is proto ?
 Proto itself is an object provided by javascript with the data types corresponding methods and properties. 
@@ -257,22 +257,22 @@ In the spread operator, deep cloning will happen.
 All primitive data types - number, string, boolean, null, undefined are passed by value.
 Updating the cloned object will not affect the original object.
 //for example
-let a = 10;
+`let a = 10;
 let b = a;
 b++;
  
 console.log(a); //output - 10
-console.log(b); //output - 11
+console.log(b); //output - 11`
 
 All non primitive data types - arrays and objects are passed by reference.
 Updating the cloned object will also affect the original object.
 //Pass by reference - for example
-let arr1 = [1, 2, 3];
+`let arr1 = [1, 2, 3];
 let arr2 = arr1;
 arr2.push(5);
  
 console.log(arr1); //1, 2, 3, 5
-console.log(arr2); //1, 2, 3, 5
+console.log(arr2); //1, 2, 3, 5`
 
 25. What is JSON ?
 JSON is JavaScript Object Notation.
@@ -286,7 +286,7 @@ Throttling - Is a function that is called for a set of intervals regardless of t
 
 27. What are classes in Javascript?
 Classes are templates to create objects and methods in javascript.
-class Users {
+`class Users {
     constructor(name, age) {
         this.name = name;
         this.age = age;
@@ -299,7 +299,7 @@ class Users {
  
 let user1 = new Users("Taher", 26);
 console.log(user1);
-user1.details();
+user1.details();`
 
 28. What is DOM?
 DOM represents the HTML document as a tree structure.
@@ -331,24 +331,24 @@ So now, in order to avoid blocking of our code, these async functions will be ha
 Fetch is promise based used to fetch a network request. 
 The response can be handled using .then .catch or async await methods.
 .then .catch -
-fetch(“”).then(res => res.json()).then(data => console.log(data));
+`fetch(“”).then(res => res.json()).then(data => console.log(data));
 Async await -
 async function getData() {
 	let res = await fetch(“”);
 	let data = await res.json(); 
-}
+}`
 
 	All Fetch methods:
 //get request
-function getData() {
+`function getData() {
     fetch("/")
     .then(res => res.json())
     .then(data => console.log(data))
     .catch(err => console.log(err));
-}
+}`
  
 //post request
-function postData() {
+`function postData() {
     fetch("/", {
         method: "POST",
         headers: {
@@ -361,10 +361,10 @@ function postData() {
     .then(res => res.json())
     .then(data => console.log(data))
     .catch(err => console.log(err));
-}
+}`
  
 //update request
-function updateData() {
+`function updateData() {
     fetch("/", {
         method: "PATCH",
         headers: {
@@ -377,14 +377,14 @@ function updateData() {
     .then(res => res.json())
     .then(data => console.log(data))
     .catch(err => console.log(err));
-}
+}`
  
 //Delete request
-function updateData() {
+`function updateData() {
     fetch("/", {
         method: "DELETE",
     })
     .then(res => res.json())
     .then(data => console.log(data))
     .catch(err => console.log(err));
-}
+}`
