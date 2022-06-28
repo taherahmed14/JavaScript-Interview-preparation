@@ -40,12 +40,12 @@ The let and const declared within the block will be considered as a separate blo
 
 5. What is shadowing ?
 
-var a = 100;
+`var a = 100;
 {
 var a = 10;
 console.log(a);
 }
-console.log(a);
+console.log(a);`
 
 If we declare a variable var in a global scope and if we try to declare the same variable within a block scope, then the value of this variable in local scope will be considered.
 
