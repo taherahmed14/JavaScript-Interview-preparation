@@ -4,12 +4,12 @@ Here I'm sharing some of the common JavaScript interview questions which could h
 
 Javascript:
 
-What is hoisting ?
+1. What is hoisting ?
 
 When we execute a javascript code, it goes through 2 phases. One is the creation phase and the next is the execution phase. In this creation phase, javascript skims through our code and hoists our variables at the top. 
 So this is the reason when we try to print a variable declared using var before the variable has been initialized we get undefined. 
 
-What is var, let and const ?
+2. What is var, let and const ?
 
 var - 
 Global scope.
@@ -22,25 +22,23 @@ Using let and const, we cannot assign the same variable name again in the same s
 Using let we can initialize a variable and declare a value at a later point of time. 
 If we try to print a let variable before initializing, it will throw a reference error.
 
-	const -
+const -
 Just like let, the variable will be hoisted and stored in temporal dead zone.
 Const is more strict than let.
 When we initialize a const variable, we also have to declare a value at the same place. Not like let, else a type error will be throwed.
 We cannot modify a const variable at a later point of time, it needs to remain constant.
 
-What is a closure ?
+3. What is a closure ?
 
 A function along with its lexical scope bound together are called closures.
 That is a function with a scope inside it and another nested function. Now this nested function has access to the variable in its lexical area, which is in its ancestor elements.
 
-
-
-What is a block scope ?
+4. What is a block scope ?
 
 Block scope is defined as { … }, and the set of code written within the block are considered as block scope. Eg. if { … }, for loop { … }.,
 The let and const declared within the block will be considered as a separate block scope, whereas var declared within the block will remain as a global scope. 
 
-What is shadowing ?
+5. What is shadowing ?
 
 var a = 100;
 {
@@ -51,9 +49,7 @@ console.log(a);
 
 If we declare a variable var in a global scope and if we try to declare the same variable within a block scope, then the value of this variable in local scope will be considered.
 
-Illegal shadowing ?
-
-What is event bubbling and event capturing or event delegation  ?
+6. What is event bubbling and event capturing or event delegation  ?
 
 Technical explanation : Bubbling propagates from the innermost to outermost element, whereas capturing propagates from outermost to innermost element.
 
@@ -64,7 +60,7 @@ This concept is called bubbling.
 
 Event capturing is the vice versa of bubbling with attribute capture as true.
 
-What is import and export in js ?
+7. What is import and export in js ?
 
 In order to maintain reusable code.
 
@@ -85,7 +81,7 @@ Import { function1, function2 } from “./components/navbar.js”
 To use this in your html file, mention where you have to append this element and invoke the function exported from the component.
 	document.body.innerHTML = navbar();
 
-What is a higher order function ?
+8. What is a higher order function ?
 
 A function takes another function as an argument or returns a function is called as higher order functions
 A function passed as an argument is a callback function.
@@ -96,7 +92,7 @@ Map transforms an array and returns another array.
 For eg., if we want to convert all the elements in an array to its square, then we can fo for map.
 Map syntax is .map with a function as an argument.
 
-		Filter:
+Filter:
 Filter is used to filter a specific value from an array.
 For eg., if we want to filter even numbers alone from the given array, we can go with .filter
 
@@ -111,8 +107,7 @@ Foreach is similar to map but it doesn’t return an array, it returns undefined
 Foreach can be used when we want to access all the values for various purposes.
 For eg., in an E-commerce page, when we fetch the data from the database and show all the details of every product in such a case we have to use foreach.
 
-
-What is a promise?
+9. What is a promise?
 
 Promise is an asynchronous operation that returns a resolved value or a value which is not resolved.
 There are 3 states in a promise - Fulfilled, pending and rejected.
@@ -122,8 +117,8 @@ When a promise is successful it goes into resolve and not successful it enters r
 Promise provides 2 methods - .then and .catch.
 If a promise is resolved, .then prints the output. If a promise is not successful then we can catch the error using .catch.
 Promises are pushed into the Micro task queue. Whereas setTime out and setInterval are pushed into the callback queue.
-Promise eg:
 
+Promise eg:
 let a = 10;
 const isEven = new Promise((res, rej) => {
 	if(a % 2 == 0) res(“Success”);
@@ -133,7 +128,7 @@ const isEven = new Promise((res, rej) => {
 isEven.then((res) => console.log(res))
 .catch((err) => console.log(err));
 
-What is a constructor?
+10. What is a constructor?
 
 Constructor function is a function to create or construct a pattern of an object.
 Constructor function has to be in pascal notation, which is the first character should be in caps. 
@@ -147,12 +142,12 @@ function Circle(radius) {
 
 const circle1 = new Circle(5);
 
-What is this ?
+11. What is this ?
 This is a keyword which points to that object.
 If we are creating an object with first name and last name and if we have a function in this object to print this object name, here we will be using this. Keyword to point at the first name of that particular object.
 In the constructor function, this points to an empty object or towards all the new objects we create having constructor as an object pattern. 
 
-What is call, apply and bind ?
+12. What is call, apply and bind ?
 
 Call, apply and bind is a concept of function borrowing.
 If there is a function within an object and if we want to access this function in another object, here using call we can access this function.
@@ -174,14 +169,14 @@ Bind is different from call and apply, whereas call and apply were making use of
 As bind makes a copy of that function, this can be used later by invoking this function.
 Eg: 
 let later = getFullName.call(name1);
-	later();
+later();
 
-What is a pure function ?
+13. What is a pure function ?
 
 A function is called as a pure function when it takes the same argument and returns the same pattern of result. For eg. Math.max(), or to add 2 numbers. 
 It shouldn’t have any side effects, like mutating data or sending a network request.
 
-Some ES6 features ?
+14. Some ES6 features ?
 
 let and const - Block scope variables.
 Arrow function.
@@ -189,30 +184,30 @@ Object and Array destructuring.
 Spread Operator - Separates the array values and combines with another array.
 	Eg: [...arr1, …arr2]
 
-What is a Polyfill ?
+15. What is a Polyfill ?
 Polyfill is a functionality where we write a piece of code to standardize our function to run in old and current browsers.
 That is, some browsers might not support the latest functions of javascript. For eg., arrow function and promises does not support on Internet explorer. 
 So here we optimize our code in order to run in all browsers.
 
-What is currying ?
+16. What is currying ?
 It is a technique to transform a function with multiple arguments into different functions taking separate arguments.
 For eg. If we want to take a sum of arguments a and b, here we will be creating a function which takes an argument ‘a’ and returns a function which takes the argument ‘b’ and returns the sum of a its lexical scope and b.
+
 const addCurry =(a) => {
-    return (b)=>{
-        return (c)=>{
-            return a+b+c
-        }
-    }
+return (b)=>{
+return (c)=>{
+return a+b+c
+}
+}
 }
 console.log(addCurry(2)(3)(5)) // 10
 
-
-What is the async and await function ?
+17. What is the async and await function ?
 Async is a keyword used in a function to make it an asynchronous function.
 Just like promises we can use try and catch blocks inside an async function to handle the operation. Asynchronous functions will also be used in fetch network requests.
 Await is a keyword which goes along with async functions which waits for the asynchronous operation to perform and store the data. 
 
-What is an arrow function and a regular function ?
+18. What is an arrow function and a regular function ?
 Regular function is a block of code which can be declared with a keyword function, function name followed by curly braces.
 Whereas arrow function is an ES6 feature which takes the syntax of parentheses pointing with an arrow at the curly braces.
 Both function types work in the same way yet there are few limitations.
@@ -233,11 +228,11 @@ function func1(a, b, c) {
 
 func1(1, 2, 3);
 
-Rest Operator ?
+19. Rest Operator ?
 Rest operator is an ES6 feature used to pass n number of input as a parameter in a function.
 It is used as ‘…input’. So now if we pass a, b, c, d as an argument to this function, then …input will form this argument as an array to use it in this function.
 
-What is a prototype ?
+20. What is a prototype ?
 Prototype is a blueprint of an object. In Javascript using prototype we can add methods and properties to a constructor. By creating an object we can inherit these properties and methods from a prototype. 
 An example to create our own method using prototype:
 //push function
@@ -245,21 +240,20 @@ Array.prototype.myPush = function(val) {
     this[this.length] = val;
 };
 
-
-What is proto ?
+21. What is proto ?
 Proto itself is an object provided by javascript with the data types corresponding methods and properties. 
 For eg. When we create an array, we can see the properties of the array we have created along with a proto which the array has inherited from.
 
-What is a Prototype chain ?
+22. What is a Prototype chain ?
 When we create an array this array inherits all the array properties and methods from proto and this array property inherits prototype of object. 
 This chaining process between prototypes is called prototype chain.
 
-What is shallow cloning and deep cloning?
+23. What is shallow cloning and deep cloning?
 Shallow cloning - When we update a cloned object then the original object will also be updated as they both are pointing towards the same object reference.
 Deep cloning - When we update the cloned object the original object will not be updated as they both are pointing towards different object references.
 In the spread operator, deep cloning will happen.
 
- What is pass by value and pass by reference ?
+24. What is pass by value and pass by reference ?
 All primitive data types - number, string, boolean, null, undefined are passed by value.
 Updating the cloned object will not affect the original object.
 //for example
@@ -280,18 +274,17 @@ arr2.push(5);
 console.log(arr1); //1, 2, 3, 5
 console.log(arr2); //1, 2, 3, 5
 
-
-What is JSON ?
+25. What is JSON ?
 JSON is JavaScript Object Notation.
 JSON is a format used to store data and transfer from server to web. 
 
-Difference between debounce and throttling?
+26. Difference between debounce and throttling?
 Debounce - Is delayed as per the event emitter. 
 I.e., every time when we enter something, the delay will be performed after this click.
 
 Throttling - Is a function that is called for a set of intervals regardless of the event that happened.
 
-What are classes in Javascript?
+27. What are classes in Javascript?
 Classes are templates to create objects and methods in javascript.
 class Users {
     constructor(name, age) {
@@ -308,36 +301,37 @@ let user1 = new Users("Taher", 26);
 console.log(user1);
 user1.details();
 
-What is DOM?
+28. What is DOM?
 DOM represents the HTML document as a tree structure.
 Using DOM we can read and access the content of the document.
 Some of the DOM methods we use are .getElementById, .querySelector, .setAttribute.
 
-What is ‘use strict’ in Javascript ?
+29. What is ‘use strict’ in Javascript ?
 Use strict in Javascript is used to strictly follow the latest ECMAscript code.
 For eg. We can declare a variable without using any let, var or const. - name = “Taher”. This is accepted in older versions and also accepted now if we don't use ‘use strict’ at top of our script. But if we use ‘use script’ at the top of our script, this statement declaration will not be valid. 
 Use strict has to be mentioned at the top of our Javascript file. Else wrap it inside a function.
 
-What are Browser specific functions ?
+30. What are Browser specific functions ?
 Alert - alert(“You will have a good day!”);
 Alerts the user with a message.
 Prompt - prompt(“How was your day?”, “Good”);
 Prompts with an input field to enter. We can get this value and use it.
 Confirm - confirm(“How was your day?”);
 By clicking ok, we get a boolean value true and cancel we get a boolean value false.
-What is a callback function ?
+
+31. What is a callback function ?
 A function passed into another function as an argument and invoked within this outer function.
 Eg. A function passed as an argument within a higher order function.
 
-What is an asynchronous function?
+32. What is an asynchronous function?
 Javascript is a single threaded language, meaning it runs line by line from top to bottom. Async functions take time to complete, for eg. setTimeout or promises. 
 So now, in order to avoid blocking of our code, these async functions will be handled parallelly by web API and once the synchronous code is executed, event loop will monitor and execute these async functions.
 
-What is fetch ?
+33. What is fetch ?
 Fetch is promise based used to fetch a network request. 
 The response can be handled using .then .catch or async await methods.
 .then .catch -
-	fetch(“”).then(res => res.json()).then(data => console.log(data));
+fetch(“”).then(res => res.json()).then(data => console.log(data));
 Async await -
 async function getData() {
 	let res = await fetch(“”);
